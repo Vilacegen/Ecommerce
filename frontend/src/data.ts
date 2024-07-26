@@ -2,6 +2,7 @@ import { Product } from "./types/Product";
 
 export const sampleProducts: Product[] = [
   {
+    _id: "1", // Add this line
     name: "Nike Slim Shirt",
     slug: "nike-slim-shirt",
     category: "Shoes",
@@ -14,8 +15,9 @@ export const sampleProducts: Product[] = [
     description: "high quality shirt",
   },
   {
+    _id: "2",
     name: "Nike Black Sweat jacket",
-    slug: "Nike Black Sweat jacket",
+    slug: "nike-black-sweat-jacket",
     category: "Jackets",
     image: "../images/N2.jpeg",
     price: 100,
@@ -26,8 +28,9 @@ export const sampleProducts: Product[] = [
     description: "high quality product",
   },
   {
+    _id: "3",
     name: "Nike Gray Sports Pants",
-    slug: "Nike Gray Sports Pants",
+    slug: "nike-gray-sports-pants",
     category: "Pants",
     image: "../images/N12.jpeg",
     price: 220,
@@ -38,8 +41,9 @@ export const sampleProducts: Product[] = [
     description: "high quality product",
   },
   {
+    _id: "4",
     name: "Adidas White Sports Shirt",
-    slug: "Adidas White Sports Shirt",
+    slug: "adidas-white-sports-shirt",
     category: "Shirt",
     image: "../images/A4.jpeg",
     price: 78,
