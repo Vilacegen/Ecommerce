@@ -39,10 +39,11 @@ type Action =
   | { type: "SWITCH_MODE" }
   | { type: "CART_ADD_ITEM"; payload: CartItem }
   | { type: "CART_REMOVE_ITEM"; payload: CartItem }
+  | { type: "CART_CLEAR" }
   | { type: "USER_SIGNIN"; payload: UserInfo }
   | { type: "USER_SIGNOUT" }
   | { type: "SAVE_SHIPPING_ADDRESS"; payload: ShippingAddress }
-  | { type: "SAVE_PAYMENT_METHOD"; payload: string }; // Add comma here
+  | { type: "SAVE_PAYMENT_METHOD"; payload: string };
 
 function reducer(state: AppState, action: Action): AppState {
   switch (action.type) {
@@ -70,6 +71,8 @@ function reducer(state: AppState, action: Action): AppState {
       localStorage.setItem("cartItems", JSON.stringify(cartItems));
       return { ...state, cart: { ...state.cart, cartItems } };
     }
+    case "CART_CLEAR":
+      return { ...state, cart: { ...state.cart, cartItems: [] } };
     case "USER_SIGNIN": {
       return { ...state, userInfo: action.payload };
     }

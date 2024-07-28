@@ -1,3 +1,4 @@
+// src/App.tsx
 import { useContext, useEffect } from "react";
 import { Badge, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { Link, Outlet } from "react-router-dom";
@@ -6,6 +7,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Store } from "./Store";
 import "./App.css";
+import SearchBar from "./components/SearchBar"; // Import SearchBar
 
 function App() {
   const {
@@ -38,6 +40,7 @@ function App() {
             <LinkContainer to="/">
               <Navbar.Brand>UrbanCart</Navbar.Brand>
             </LinkContainer>
+            <SearchBar /> {/* Add SearchBar here */}
           </Container>
           <Nav>
             <div className="switch">
@@ -59,13 +62,12 @@ function App() {
             </Link>
             {userInfo ? (
               <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
-                <Link
-                  className="dropdown-item"
-                  to="#signout"
-                  onClick={signoutHandler}
-                >
+                <LinkContainer to="/orderhistory">
+                  <NavDropdown.Item>Order History</NavDropdown.Item>
+                </LinkContainer>
+                <NavDropdown.Item onClick={signoutHandler}>
                   Sign Out
-                </Link>
+                </NavDropdown.Item>
               </NavDropdown>
             ) : (
               <Link className="nav-link" to="/signin">
@@ -81,7 +83,7 @@ function App() {
         </Container>
       </main>
       <footer>
-        <div className="text-center">All rights reserved</div>
+        <div className="text-center">Best Online Shop</div>
       </footer>
     </div>
   );

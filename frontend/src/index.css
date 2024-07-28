@@ -37,3 +37,8 @@ img.large {
   border-bottom: 0.2rem solid #eaee0a;
   color: #eaee0a;
 }
+
+.dropdown-menu[data-bs-popper] {
+  left: auto;
+  right: 0px;
+}

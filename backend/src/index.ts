@@ -6,6 +6,7 @@ import { productRouter } from "./routers/productRouter";
 import { seedRouter } from "./routers/seedRouter";
 import { userRouter } from "./routers/userRouter";
 import { orderRouter } from "./routers/orderRouter";
+import { keyRouter } from "./routers/keyRouter";
 
 dotenv.config();
 
@@ -25,7 +26,7 @@ const app = express();
 app.use(
   cors({
     credentials: true,
-    origin: ["http://localhost:5173", "http://localhost:5174"], // Add both origins
+    origin: ["http://localhost:5173", "http://localhost:5174"],
   })
 );
 
@@ -36,6 +37,7 @@ app.use("/api/products", productRouter);
 app.use("/api/users", userRouter);
 app.use("/api/orders", orderRouter);
 app.use("/api/seed", seedRouter);
+app.use("/api/keys", keyRouter);
 
 app.use(
   (
