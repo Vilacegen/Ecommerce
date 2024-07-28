@@ -55,9 +55,6 @@ const router = createBrowserRouter(
         <Route path="orders" element={<AdminOrders />} />
         <Route path="users" element={<AdminUsers />} />
       </Route>
-
-      {/* <Route path="dashboard" element={<Dashboard />} /> */}
-      {/* ... etc. */}
     </Route>
   )
 );

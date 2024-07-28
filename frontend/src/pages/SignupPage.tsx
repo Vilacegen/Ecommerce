@@ -28,7 +28,7 @@ export default function SignupPage() {
     }
   }, [navigate, redirect, userInfo]);
 
-  const { mutateAsync: signup } = useSignupMutation(); // Removed isLoading
+  const { mutateAsync: signup } = useSignupMutation();
 
   const submitHandler = async (e: React.SyntheticEvent) => {
     e.preventDefault();

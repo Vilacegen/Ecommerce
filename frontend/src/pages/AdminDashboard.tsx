@@ -53,7 +53,6 @@ export default function AdminDashboard() {
               </Card>
             </Col>
           </Row>
-          {/* Add more dashboard content as needed */}
         </>
       )}
     </div>

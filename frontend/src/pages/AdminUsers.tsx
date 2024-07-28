@@ -13,7 +13,7 @@ export default function AdminUsers() {
   const { mutateAsync: deleteUser } = useDeleteUserMutation();
 
   const deleteHandler = async (id: string) => {
-    if (window.confirm("Are you sure you want to delete this user?")) {
+    if (window.confirm("Are you sure you want to remove this user?")) {
       try {
         await deleteUser(id);
         refetch();
