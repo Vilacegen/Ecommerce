@@ -1,5 +1,17 @@
 {
   "dependencies": {
     "react-router-dom": "^6.25.1"
-  }
+  },
+  "name": "ecommerce",
+  "version": "1.0.0",
+  "description": "```UrbanCart - E-commerce App System~~~\r UrbanCart is an E-commerce App System designed to enable users to shop for clothing online. This app provides a seamless shopping experience from browsing items to completing a purchase.",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "build": "cd backend && npm install && npm run build && cd ../frontend && npm install && npm run",
+    "start": "set TG_ALLOW_MIXED=ALLOW&& node backend/build/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
 }
