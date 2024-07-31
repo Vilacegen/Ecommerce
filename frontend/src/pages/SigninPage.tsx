@@ -1,6 +1,4 @@
 import { useContext, useEffect, useState } from "react";
-import { Button, Container, Form } from "react-bootstrap";
-import { Helmet } from "react-helmet-async";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import LoadingBox from "../components/LoadingBox";
@@ -9,6 +7,7 @@ import { Store } from "../Store";
 import { ApiError } from "../types/ApiError";
 import { getError } from "../utils";
 import { UserInfo } from "../types/UserInfo";
+import "./Signin.css";
 
 export default function SigninPage() {
   const navigate = useNavigate();
@@ -44,39 +43,36 @@ export default function SigninPage() {
   }, [navigate, redirect, userInfo]);
 
   return (
-    <Container className="small-container">
-      <Helmet>
-        <title>Sign In</title>
-      </Helmet>
-      <h1 className="my-3">Sign In</h1>
-      <Form onSubmit={submitHandler}>
-        <Form.Group className="mb-3" controlId="email">
-          <Form.Label>Email</Form.Label>
-          <Form.Control
+    <div className="form-container">
+      <form className="form" onSubmit={submitHandler}>
+        <p className="form-title">Sign in to your account</p>
+        <div className="input-container">
+          <input
+            placeholder="Enter email"
             type="email"
             required
+            value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="password">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
+        </div>
+        <div className="input-container">
+          <input
+            placeholder="Enter password"
             type="password"
             required
+            value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-        </Form.Group>
-        <div className="mb-3">
-          <Button disabled={isPending} type="submit">
-            Sign In
-          </Button>
-          {isPending && <LoadingBox />}
         </div>
-        <div className="mb-3">
+        <button className="submit" type="submit" disabled={isPending}>
+          Sign in
+        </button>
+        {isPending && <LoadingBox />}
+        <p className="signup-link">
           New customer?{" "}
           <Link to={`/signup?redirect=${redirect}`}>Create your account</Link>
-        </div>
-      </Form>
-    </Container>
+        </p>
+      </form>
+    </div>
   );
 }
